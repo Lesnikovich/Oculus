@@ -22,3 +22,17 @@ function open(evt){
     tabTarget.classList.add('tabs__btn-item--active');
     document.querySelector(`#${button}`).classList.add('tabs__content-item--active');
 }
+
+const menuBtn = document.querySelector('.menu-btn');
+const menu = document.querySelector('.menu');
+const menuLink = document.querySelectorAll('.menu__link');
+
+menuLink.forEach(function(element){
+    element.addEventListener('click', ()=>{
+        menu.classList.remove('menu--active');
+    });
+});
+
+menuBtn.addEventListener('click', ()=>{
+    menu.classList.toggle('menu--active');
+});
